@@ -14,13 +14,15 @@ export function meta() {
 }
 
 export default function Home() {
-  const { auth } = usePuterStore();
+  const { auth, isLoading } = usePuterStore();
   const navigate = useNavigate();
   const [loadingResumes, setLoadingResumes] = useState(false);
 
   useEffect(() => {
-    if (!auth.isAuthenticated) navigate("/auth?next=/");
-  }, [auth.isAuthenticated]);
+    if (!auth.isAuthenticated && !isLoading) {
+      navigate("/auth?next=/");
+    }
+  }, [auth.isAuthenticated, isLoading, navigate]);
 
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover">
