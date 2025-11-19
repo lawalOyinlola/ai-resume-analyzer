@@ -12,13 +12,15 @@ export function PuterScriptLoader() {
     script.async = true;
     script.onload = () => {
       setScriptError(null);
-      init();
     };
     script.onerror = () => {
       console.error("Failed to load Puter.js");
       setScriptError("Unable to connect to Puter. Please refresh the page.");
     };
     document.body.appendChild(script);
+
+    // Kick off Puter polling immediately; init() will set an error if Puter never appears.
+    init();
 
     return () => {
       if (document.body.contains(script)) {

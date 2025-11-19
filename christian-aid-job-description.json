@@ -1,0 +1,67 @@
+{
+  "jobTitle": "Developer (Full-stack)",
+  "employmentType": "Permanent, Full-time, Hybrid working",
+  "location": {
+    "country": "UK",
+    "offices": ["Cardiff", "Edinburgh", "London", "Warrington"],
+    "requirements": "Minimum 2 days per week in office, option to work remotely for remaining 3 days"
+  },
+  "salary": {
+    "london": "£58,475 per year (including London allowance)",
+    "otherLocations": "£53,593 per year (Cardiff, Edinburgh, or Warrington)"
+  },
+  "applicationNote": "Early applications are strongly encouraged as interviews will be scheduled on an ongoing basis. We reserve the right to close the advert before the advertised closing date.",
+  "aboutCompany": {
+    "mission": "Christian Aid exists to create a world where everyone can live a full life, free from poverty. We are a global movement of people, churches and local organisations who passionately champion dignity, equality and justice worldwide. We are the changemakers, the peacemakers, the mighty of heart.",
+    "values": ["dignity", "equality", "justice", "love"],
+    "diversity": "We're committed to building a diverse and inclusive workplace, and recognise the value this brings in forming strong, creative and high performing teams. We welcome applications from all sections of the community, and from those with experience from outside of the voluntary sector. And no, you don't have to be Christian to work here – we encourage people of all faiths and none to apply.",
+    "workLifeBalance": "We value a good work-life balance, so we're open to part-time and flexible working. We also offer hybrid working for our office-based colleagues."
+  },
+  "aboutRole": {
+    "summary": "The Developer (Full-stack) plays a key role in developing and enhancing user-centric digital products at Christian Aid. This position focuses on delivering high-quality front-end (70%) and back-end (30%) solutions on the Drupal CMS, ensuring seamless and intuitive user experiences.",
+    "responsibilities": [
+      "Working closely with the Technical Lead, you'll address complex challenges identified by stakeholders and user feedback, providing strategic direction and innovative solutions",
+      "This role is crucial to the success of our digital fundraising initiatives, requiring a blend of technical expertise, creativity, and strategic thinking",
+      "Developing and maintaining digital products, ensuring they meet user needs",
+      "Adhering to accessibility standards",
+      "Maintaining brand integrity",
+      "Creating engaging, user-friendly experiences that align with our organisational goals"
+    ],
+    "techStack": {
+      "primary": "Drupal CMS",
+      "frontend": "70%",
+      "backend": "30%"
+    }
+  },
+  "aboutYou": {
+    "experience": [
+      "Extensive experience in front-end development",
+      "Solid understanding of back-end technologies"
+    ],
+    "skills": [
+      "Passion for creating products that prioritise user experience",
+      "Excel at crafting intuitive, visually engaging interfaces",
+      "Strong communicator, able to effectively translate technical concepts for both technical and non-technical stakeholders",
+      "Forward-thinking developer who embraces new technologies and methodologies",
+      "Staying up-to-date with industry trends and continually seeking to enhance your skills",
+      "Proactive problem solver, adept at navigating complex technical challenges",
+      "Finding innovative solutions that align with business goals and user needs",
+      "User-centric approach ensuring products not only meet but exceed expectations"
+    ]
+  },
+  "furtherInformation": {
+    "diversityAndInclusion": "At Christian Aid we strive to be an inclusive and diverse employer and recognise the value that this brings in helping to build strong, creative and high performing teams. We are actively encouraging racialised minorities, LGBTQ+, people with disabilities, returning parents or carers who are re-entering work after a career break, people with caring responsibilities, people from low socioeconomic backgrounds, women, and older workers to apply.",
+    "faithIdentity": "We have a strong Christian ethos and we encourage applications from all faiths. Applicants will be expected to demonstrate an understanding of and sympathy with Christian Aid's faith identity.",
+    "checks": [
+      "All successful candidates will require a DBS/police check appropriate to the role and location",
+      "Counter Terrorism Sanction check as part of your clearance for commencing your role with us",
+      "We also participate in the Inter Agency Misconduct Disclosure Scheme. In line with this Scheme, we will request information as part of the referencing process from job applicants' previous employers about any findings of sexual exploitation, sexual abuse and/or sexual harassment during employment, or incidents under investigation when the applicant left employment."
+    ],
+    "rightToWork": "This role requires applicants to have the right to live and work in the country where this position is based and undertake the role that you have been offered. If you are successful and we make you an offer for the role, we will be required to conduct a right to work check on your immigration status in the UK.",
+    "benefits": [
+      "Generous holiday allowance",
+      "Season ticket loan",
+      "Flexibility that will ensure you enjoy a good work/life balance"
+    ]
+  }
+}
