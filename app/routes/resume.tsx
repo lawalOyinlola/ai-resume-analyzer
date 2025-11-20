@@ -6,7 +6,7 @@ import ATS from "~/components/ATS";
 import Details from "~/components/Details";
 
 export const meta = () => [
-  { title: "Resumind | Review " },
+  { title: "Resumind | Review" },
   { name: "description", content: "Detailed overview of your resume" },
 ];
 
@@ -16,13 +16,14 @@ const Resume = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [resumeUrl, setResumeUrl] = useState("");
   const [feedback, setFeedback] = useState<Feedback | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!auth.isAuthenticated && !isLoading) {
       navigate(`/auth?next=/resume/${id}`);
     }
-  }, [auth.isAuthenticated, isLoading, navigate]);
+  }, [auth.isAuthenticated, isLoading, navigate, id]);
 
   useEffect(() => {
     if (!id || !kv || !fs) {
@@ -61,6 +62,7 @@ const Resume = () => {
         setImageUrl(imageUrl);
       } catch (error) {
         console.error("Failed to load and process resume:", error);
+        setError("Failed to load resume. Please try again.");
         if (resumeUrl) URL.revokeObjectURL(resumeUrl);
         if (imageUrl) URL.revokeObjectURL(imageUrl);
       }
@@ -85,7 +87,8 @@ const Resume = () => {
         <Link to="/" className="back-button">
           <img
             src="/icons/back.svg"
-            alt="Back to homepage"
+            alt=""
+            aria-hidden="true"
             className="w-2.5 h-2.5"
           />
           <span className="text-gray-800 text-sm font-semibold">
@@ -110,7 +113,9 @@ const Resume = () => {
         </section>
         <section className="feedback-section">
           <h2 className="text-4xl !text-black font-bold">Resume Review</h2>
-          {feedback ? (
+          {error ? (
+            <div className="text-red-600 text-center p-4">{error}</div>
+          ) : feedback ? (
             <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
               <Summary feedback={feedback} />
               <ATS

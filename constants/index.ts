@@ -188,8 +188,9 @@ export const AIResponseFormat = `
         score: number; //rate based on ATS suitability
         tips: {
           type: "good" | "improve";
-          tip: string; //give 3-4 tips
-        }[];
+          tip: string; //make it a short "title" for the actual explanation
+          explanation: string; //explain in detail here
+        }[]; //give 3-4 tips
       };
       toneAndStyle: {
         score: number; //max 100
@@ -237,5 +238,5 @@ export const prepareInstructions = ({jobTitle, jobDescription}: { jobTitle: stri
       The job description is: ${jobDescription}
       Provide the feedback using the following format:
       ${AIResponseFormat}
-      Return the analysis as an JSON object, without any other text and without the backticks.
+      Return the analysis as a JSON object, without any other text and without the backticks.
       Do not include any other text or comments.`;

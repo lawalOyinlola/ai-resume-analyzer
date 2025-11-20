@@ -22,10 +22,19 @@ export function PuterScriptLoader() {
         setScriptError("Unable to connect to Puter. Please refresh the page.");
       }
     };
+    script.onload = () => {
+      if (isMounted) {
+        setScriptError(null);
+        init();
+      }
+    };
+    script.onerror = () => {
+      console.error("Failed to load Puter.js");
+      if (isMounted) {
+        setScriptError("Unable to connect to Puter. Please refresh the page.");
+      }
+    };
     document.body.appendChild(script);
-
-    // Kick off Puter polling immediately; init() will set an error if Puter never appears.
-    init();
 
     return () => {
       isMounted = false;
@@ -38,7 +47,7 @@ export function PuterScriptLoader() {
   if (!scriptError) return null;
 
   return (
-    <div className="bg-red-100 text-red-900 text-sm px-4 py-2">
+    <div className="bg-red-100 text-red-900 text-sm px-4 py-2" role="alert">
       {scriptError}
     </div>
   );

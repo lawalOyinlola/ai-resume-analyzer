@@ -55,11 +55,8 @@ const ATS: React.FC<ATSProps> = ({ score, suggestions }) => {
 
         {/* Suggestions list */}
         <div className="space-y-3">
-          {suggestions.map((suggestion) => (
-            <div
-              key={`${suggestion.type}-${suggestion.tip}`}
-              className="flex items-start gap-3"
-            >
+          {suggestions.map((suggestion, index) => (
+            <div key={index} className="flex items-start gap-3">
               <img
                 src={
                   suggestion.type === "good"

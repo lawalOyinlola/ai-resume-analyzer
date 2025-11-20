@@ -1,18 +1,25 @@
 const ScoreCircle = ({ score = 75 }: { score?: number }) => {
+  const clampedScore = Math.min(100, Math.max(0, score));
+
   const radius = 40;
   const stroke = 8;
   const normalizedRadius = radius - stroke / 2;
   const circumference = 2 * Math.PI * normalizedRadius;
-  const progress = score / 100;
+  const progress = clampedScore / 100;
   const strokeDashoffset = circumference * (1 - progress);
 
   return (
-    <div className="relative w-[100px] h-[100px]">
+    <div
+      className="relative w-[100px] h-[100px]"
+      role="img"
+      aria-label={`Score: ${score} out of 100`}
+    >
       <svg
         height="100%"
         width="100%"
         viewBox="0 0 100 100"
         className="transform -rotate-90"
+        aria-hidden="true"
       >
         {/* Background circle */}
         <circle
@@ -45,7 +52,10 @@ const ScoreCircle = ({ score = 75 }: { score?: number }) => {
 
       {/* Score and issues */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="font-semibold text-sm">{`${score}/100`}</span>
+        <span
+          className="font-semibold text-sm"
+          aria-hidden="true"
+        >{`${clampedScore}/100`}</span>
       </div>
     </div>
   );

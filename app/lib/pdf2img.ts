@@ -48,15 +48,21 @@ export async function convertPdfToImage(
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d");
 
+    if (!context) {
+      return {
+        imageUrl: "",
+        file: null,
+        error: "Failed to get canvas 2d context",
+      };
+    }
+
     canvas.width = viewport.width;
     canvas.height = viewport.height;
 
-    if (context) {
-      context.imageSmoothingEnabled = true;
-      context.imageSmoothingQuality = "high";
-    }
+    context.imageSmoothingEnabled = true;
+    context.imageSmoothingQuality = "high";
 
-    await page.render({ canvasContext: context!, viewport }).promise;
+    await page.render({ canvasContext: context, viewport }).promise;
 
     return new Promise((resolve) => {
       canvas.toBlob(

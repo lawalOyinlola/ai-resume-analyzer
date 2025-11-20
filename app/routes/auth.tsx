@@ -12,7 +12,7 @@ const Auth = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const nextParam = params.get("next");
-  const next = nextParam && nextParam.startsWith("/") ? nextParam : "/";
+  const next = nextParam && nextParam.startsWith("/") && !nextParam.startsWith("//") ? nextParam : "/";
   const navigate = useNavigate();
 
   useEffect(() => {
