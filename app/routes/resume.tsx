@@ -83,7 +83,11 @@ const Resume = () => {
     <main className="!pt-0">
       <nav className="resume-nav">
         <Link to="/" className="back-button">
-          <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
+          <img
+            src="/icons/back.svg"
+            alt="Back to homepage"
+            className="w-2.5 h-2.5"
+          />
           <span className="text-gray-800 text-sm font-semibold">
             Back to Homepage
           </span>
@@ -98,6 +102,7 @@ const Resume = () => {
                   src={imageUrl}
                   className="w-full h-full object-contain rounded-2xl"
                   title="resume"
+                  alt="Your resume preview"
                 />
               </a>
             </div>
@@ -115,7 +120,11 @@ const Resume = () => {
               <Details feedback={feedback} />
             </div>
           ) : (
-            <img src="/images/resume-scan-2.gif" className="w-full" />
+            <img
+              src="/images/resume-scan-2.gif"
+              className="w-full"
+              alt="Scanning your resume for feedback"
+            />
           )}
         </section>
       </div>

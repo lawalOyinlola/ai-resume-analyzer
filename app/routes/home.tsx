@@ -1,10 +1,8 @@
-import type { Route } from "./+types/home";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router";
 import Navbar from "~/components/Navbar";
 import ResumeCard from "~/components/ResumeCard";
 import { usePuterStore } from "~/lib/puter";
-import { useNavigate } from "react-router";
-import { useEffect, useState } from "react";
-import { resumes } from "../../constants";
 
 export function meta() {
   return [
@@ -14,8 +12,9 @@ export function meta() {
 }
 
 export default function Home() {
-  const { auth, isLoading } = usePuterStore();
+  const { auth, kv, isLoading } = usePuterStore();
   const navigate = useNavigate();
+  const [resumes, setResumes] = useState<Resume[]>([]);
   const [loadingResumes, setLoadingResumes] = useState(false);
 
   useEffect(() => {
@@ -23,6 +22,23 @@ export default function Home() {
       navigate("/auth?next=/");
     }
   }, [auth.isAuthenticated, isLoading, navigate]);
+
+  useEffect(() => {
+    const loadResumes = async () => {
+      setLoadingResumes(true);
+
+      const resumes = (await kv.list("resume:*", true)) as KVItem[];
+
+      const parsedResumes = resumes?.map(
+        (resume) => JSON.parse(resume.value) as Resume
+      );
+
+      setResumes(parsedResumes || []);
+      setLoadingResumes(false);
+    };
+
+    loadResumes();
+  }, []);
 
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover">
@@ -40,7 +56,12 @@ export default function Home() {
 
         {loadingResumes && (
           <div className="flex flex-col items-center justify-center">
-            <img src="/images/resume-scan-2.gif" className="w-[200px]" />
+            <img
+              src="/images/resume-scan-2.gif"
+              className="w-[200px]"
+              alt="Loading your resumes
+            "
+            />
           </div>
         )}
 
@@ -49,6 +70,14 @@ export default function Home() {
             {resumes.map((resume) => (
               <ResumeCard key={resume.id} resume={resume} />
             ))}
+          </div>
+        )}
+
+        {!loadingResumes && resumes?.length === 0 && (
+          <div className="flex flex-col items-center justify-center mt-10 gap-4">
+            <Link to="/upload" className="upload-button w-fit!">
+              Upload Resume
+            </Link>
           </div>
         )}
       </section>
