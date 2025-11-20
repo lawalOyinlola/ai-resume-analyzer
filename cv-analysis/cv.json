@@ -187,13 +187,6 @@
       ]
     },
     {
-      "name": "MarketGist",
-      "technologies": ["Next.js", "MongoDB", "TypeScript"],
-      "description": [
-        "Market analysis platform with MongoDB backend for data storage and retrieval. Built with accessibility in mind, ensuring WCAG compliance and optimal user experience across devices."
-      ]
-    },
-    {
       "name": "WordPress E-commerce Site",
       "technologies": ["WordPress", "WooCommerce", "PHP", "MySQL"],
       "description": [
@@ -204,7 +197,7 @@
       "name": "TaskPilot (Task Management App)",
       "technologies": ["Vue (JavaScript)"],
       "description": [
-        "A task management application built with Vue 3's composition API. It serves to demonstrates framework versatility and component-based architecture."
+        "A task management application built with Vue 3's composition API. It demonstrates framework versatility and component-based architecture."
       ]
     }
   ]

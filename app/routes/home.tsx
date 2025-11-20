@@ -24,21 +24,26 @@ export default function Home() {
   }, [auth.isAuthenticated, isLoading, navigate]);
 
   useEffect(() => {
+    if (!kv) return;
+
     const loadResumes = async () => {
       setLoadingResumes(true);
-
-      const resumes = (await kv.list("resume:*", true)) as KVItem[];
-
-      const parsedResumes = resumes?.map(
-        (resume) => JSON.parse(resume.value) as Resume
-      );
-
-      setResumes(parsedResumes || []);
-      setLoadingResumes(false);
+      try {
+        const resumes = (await kv.list("resume:*", true)) as KVItem[];
+        const parsedResumes = resumes?.map(
+          (resume) => JSON.parse(resume.value) as Resume
+        );
+        setResumes(parsedResumes || []);
+      } catch (error) {
+        console.error("Failed to load resumes:", error);
+        setResumes([]);
+      } finally {
+        setLoadingResumes(false);
+      }
     };
 
     loadResumes();
-  }, []);
+  }, [kv]);
 
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover">
@@ -59,8 +64,7 @@ export default function Home() {
             <img
               src="/images/resume-scan-2.gif"
               className="w-[200px]"
-              alt="Loading your resumes
-            "
+              alt="Loading your resumes"
             />
           </div>
         )}
@@ -75,7 +79,7 @@ export default function Home() {
 
         {!loadingResumes && resumes?.length === 0 && (
           <div className="flex flex-col items-center justify-center mt-10 gap-4">
-            <Link to="/upload" className="upload-button w-fit!">
+            <Link to="/upload" className="upload-button w-fit! px-4">
               Upload Resume
             </Link>
           </div>

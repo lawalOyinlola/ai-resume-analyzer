@@ -3,13 +3,15 @@ interface ScoreBadgeProps {
 }
 
 const ScoreBadge: React.FC<ScoreBadgeProps> = ({ score }) => {
+  const normalizedScore = Math.max(0, Math.min(100, isNaN(score) ? 0 : score));
+
   let badgeColor = "";
   let badgeText = "";
 
-  if (score > 70) {
+  if (normalizedScore > 70) {
     badgeColor = "bg-badge-green text-green-600";
     badgeText = "Strong";
-  } else if (score >= 50) {
+  } else if (normalizedScore >= 50) {
     badgeColor = "bg-badge-yellow text-yellow-600";
     badgeText = "Good Start";
   } else {

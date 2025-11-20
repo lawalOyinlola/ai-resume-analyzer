@@ -94,7 +94,15 @@ const Upload = () => {
     const jobTitle = formData.get("job-title") as string;
     const jobDescription = formData.get("job-description") as string;
 
-    if (!file) return;
+    if (!file) {
+      setStatusText("Please select a resume file to upload");
+      return;
+    }
+    
+    if (!companyName || !jobTitle || !jobDescription) {
+      setStatusText("Please fill in all required fields");
+      return;
+    }
 
     handleAnalyze({ companyName, jobTitle, jobDescription, file });
   };
@@ -109,7 +117,7 @@ const Upload = () => {
           {isProcessing ? (
             <>
               <h2>{statusText}</h2>
-              <img src="/images/resume-scan.gif" className="w-full" />
+              <img src="/images/resume-scan.gif" alt="Resume scanning animation" className="w-full" />
             </>
           ) : (
             <h2>Drop your resume for an ATS score and improvement tips</h2>

@@ -22,7 +22,7 @@ const useAccordion = () => {
 
 interface AccordionProps {
   children: ReactNode;
-  defaultOpen?: string;
+  defaultOpen?: string | string[];
   allowMultiple?: boolean;
   className?: string;
 }
@@ -33,9 +33,18 @@ export const Accordion: React.FC<AccordionProps> = ({
   allowMultiple = false,
   className = "",
 }) => {
-  const [activeItems, setActiveItems] = useState<string[]>(
-    defaultOpen ? [defaultOpen] : []
-  );
+  const [activeItems, setActiveItems] = useState<string[]>(() => {
+    if (!defaultOpen) {
+      return [];
+    }
+    if (allowMultiple) {
+      return Array.isArray(defaultOpen) ? defaultOpen : [defaultOpen];
+    }
+    if (Array.isArray(defaultOpen)) {
+      return defaultOpen.length > 0 ? [defaultOpen[0]] : [];
+    }
+    return [defaultOpen];
+  });
 
   const toggleItem = (id: string) => {
     setActiveItems((prev) => {
@@ -122,6 +131,9 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   return (
     <button
       onClick={handleClick}
+      id={`accordion-header-${itemId}`}
+      aria-expanded={isActive}
+      aria-controls={`accordion-content-${itemId}`}
       className={`
         w-full px-4 py-3 text-left
         focus:outline-none
@@ -154,13 +166,17 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({
 
   return (
     <div
+      id={`accordion-content-${itemId}`}
+      role="region"
+      aria-labelledby={`accordion-header-${itemId}`}
+      aria-hidden={!isActive}
       className={`
         overflow-hidden transition-all duration-300 ease-in-out
         ${isActive ? "max-h-fit opacity-100" : "max-h-0 opacity-0"}
         ${className}
       `}
     >
-      <div className="px-4 py-3 ">{children}</div>
+      <div className="px-4 py-3">{children}</div>
     </div>
   );
 };

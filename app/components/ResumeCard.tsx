@@ -12,15 +12,45 @@ const ResumeCard = ({
   const [resumeUrl, setResumeUrl] = useState("");
 
   useEffect(() => {
-    const loadResume = async () => {
-      const blob = await fs.read(imagePath);
-      if (!blob) return;
-      let url = URL.createObjectURL(blob);
-      setResumeUrl(url);
+    if (!imagePath || !fs) {
+      setResumeUrl("");
+      return;
+    }
+
+    let aborted = false;
+    let objectUrl: string | undefined;
+
+    const loadResumeImage = async () => {
+      try {
+        const blob = await fs.read(imagePath);
+
+        if (aborted || !blob) {
+          return;
+        }
+
+        objectUrl = URL.createObjectURL(blob);
+
+        if (aborted) {
+          URL.revokeObjectURL(objectUrl);
+          return;
+        }
+
+        setResumeUrl(objectUrl);
+      } catch (error) {
+        console.error("Failed to load resume preview:", error);
+        setResumeUrl("");
+      }
     };
 
-    loadResume();
-  }, [imagePath]);
+    loadResumeImage();
+
+    return () => {
+      aborted = true;
+      if (objectUrl) {
+        URL.revokeObjectURL(objectUrl);
+      }
+    };
+  }, [fs, imagePath]);
 
   return (
     <Link

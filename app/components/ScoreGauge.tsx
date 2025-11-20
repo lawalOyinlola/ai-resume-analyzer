@@ -8,8 +8,8 @@ const ScoreGauge: React.FC<ScoreGaugeProps> = ({ score = 75 }) => {
   const [pathLength, setPathLength] = useState(0);
   const pathRef = useRef<SVGPathElement>(null);
 
-  const value = Math.min(100, Math.max(0, score));
-  const percentage = value / 100;
+  const clampedScore = Math.min(100, Math.max(0, score));
+  const percentage = clampedScore / 100;
 
   useEffect(() => {
     if (pathRef.current) {
@@ -57,7 +57,7 @@ const ScoreGauge: React.FC<ScoreGaugeProps> = ({ score = 75 }) => {
         </svg>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center pt-2">
-          <div className="text-xl font-semibold pt-4">{score}/100</div>
+          <div className="text-xl font-semibold pt-4"> {clampedScore}/100</div>
         </div>
       </div>
     </div>
