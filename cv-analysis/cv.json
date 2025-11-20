@@ -1,0 +1,211 @@
+{
+  "jobTitle": "Full-Stack Developer",
+  "professionalSummary": "Dedicated and versatile Full-Stack Developer with extensive experience in frontend development (70%) and solid backend expertise (30%), delivering high-quality software solutions and leading cross-functional engineering teams. Proficient in React, Next.js, Vue, TypeScript, PHP, Laravel, and various web technologies, with experience in CMS platforms including WordPress and familiarity with Drupal-based systems. Proven track record of delivering high-impact FinTech solutions, real-time applications, and AI-powered features. Strong advocate for engineering excellence, WCAG accessibility standards compliance, and collaborative development practices. Excellent at translating technical concepts for both technical and non-technical stakeholders, with a user-centric approach to product development. Known for quick learning, adaptability, and strong communication skills, combined with a passion for continuous self-development and team collaboration.",
+  "coreSkills": {
+    "languages": ["JavaScript", "TypeScript", "HTML", "CSS", "PHP"],
+    "frameworksLibraries": [
+      "React.js",
+      "Vue.js",
+      "Next.js",
+      "Laravel",
+      "Flutter"
+    ],
+    "cmsPlatforms": ["WordPress", "WooCommerce", "Drupal (familiar)"],
+    "databases": ["MongoDB", "MySQL", "Supabase", "Firebase"],
+    "backendTools": ["phpMyAdmin", "RESTful APIs", "Server-side Architecture"],
+    "tools": [
+      "Git",
+      "Babel",
+      "NPM",
+      "Yarn",
+      "FlutterFlow",
+      "Figma",
+      "Supabase",
+      "Inngest"
+    ],
+    "apisTesting": ["Jest", "Cypress"],
+    "accessibility": [
+      "WCAG Compliance",
+      "ARIA Standards",
+      "Screen Reader Compatibility",
+      "Keyboard Navigation"
+    ],
+    "other": [
+      "Responsive Design",
+      "Cross-Browser Compatibility",
+      "Problem Solving and Debugging",
+      "Process Improvement",
+      "Stakeholder Communication",
+      "Technical Documentation",
+      "Visual Development Tools for Rapid Prototyping/Development (FlutterFlow)"
+    ]
+  },
+  "professionalExperience": [
+    {
+      "title": "Frontend Developer & Team lead",
+      "company": "Tech N' Goodwill Limited",
+      "period": "Feb 2024 – Present",
+      "responsibilities": [
+        "Led cross‑functional teams (UI/UX, marketing, backend, frontend) to architect, ship, and iterate on SafulPay FinTech infrastructure and core systems, working closely with stakeholders to translate business requirements into technical solutions.",
+        "Collaboratively Shipped SafulPay v2: FlutterFlow (Flutter) front end with Go backend; collaborated on customer and agent portals, agency monitoring platform, and merchant bulk payment/collections web app with full-stack implementation.",
+        "Managed database operations using phpMyAdmin for SafulPay and other products, ensuring data integrity and optimizing query performance for production systems.",
+        "Rebuilt company website using React + TypeScript, achieving ~40% performance improvement through code optimization, lazy loading, and GSAP animations; converted Figma designs to pixel-perfect, WCAG 2.1 AA compliant UI with semantic HTML, ARIA labels, and keyboard navigation support.",
+        "Worked closely with stakeholders and user feedback to address complex technical challenges, providing strategic direction and innovative solutions aligned with business goals.",
+        "Created product tutorials and documentation; maintained API/technical notes for smooth collaboration with technical and non-technical team members.",
+        "Established engineering standards: enforced Git/GitHub best practices (structured PRs, semantic commits), accessibility compliance (WCAG standards), and performance benchmarks.",
+        "Created comprehensive technical documentation, API guides, and product tutorials to streamline team collaboration and onboarding, effectively communicating technical concepts to diverse audiences."
+      ]
+    },
+    {
+      "title": "Frontend & Software Developer",
+      "company": "Tech N' Goodwill Limited",
+      "period": "Aug 2023 - Feb 2024",
+      "responsibilities": [
+        "Collaborated with cross-functional teams and stakeholders to develop and maintain web applications, including an e-commerce site using Laravel and SafulPay v1; front end in FlutterFlow backend in PHP with MySQL database management.",
+        "Developed and maintained backend APIs and database schemas, ensuring secure data handling and efficient server-side operations for production applications.",
+        "Built WordPress e-commerce solutions using WooCommerce for freelance clients, customizing themes and plugins to meet specific business requirements and user needs.",
+        "Demonstrated the ability to quickly master software tools for software development, writing, animation, and graphic design, creating engaging content tailored to client needs while maintaining accessibility standards."
+      ]
+    },
+    {
+      "title": "Frontend Engineer Intern",
+      "company": "HNG Internship",
+      "period": "Jan 2025 - Apr 2025",
+      "responsibilities": [
+        "Collaborated in fast-paced, production environment with backend/frontend engineers, PMs, designers, QA teams, and stakeholders to ship features under tight deadlines, effectively communicating technical progress and challenges.",
+        "Co-developed \"Resolve\" voting platform using Next.js + TypeScript: implemented secure election infrastructure for organizations and individuals; built responsive, WCAG-compliant UI with Tailwind CSS and shadcn/ui component library, ensuring full keyboard navigation and screen reader compatibility.",
+        "Built a text‑processing AI application in React + TypeScript using Chrome Origin Trials APIs (Language Detector, Summarization, Translation) for real-time language detection and translation, with accessible form controls and ARIA labels for assistive technologies.",
+        "Maintained engineering excellence: delivered accessible, responsive UI optimized performance metrics; conducted code reviews and collaborated on cross-functional feature development, translating user feedback into technical improvements."
+      ]
+    },
+    {
+      "title": "Interim Developer",
+      "company": "AltSchool Africa",
+      "period": "March 2023 - March 2024",
+      "responsibilities": [
+        "Intensive, education‑driven internship focused on technical, soft skills and full-stack engineering fundamentals, including backend development and database management.",
+        "Built production-ready projects including \"ScissorsWeb\" (URL Shortener with analytics) and \"Task Pilot\" (task management app) consuming RESTful APIs and implementing authentication with MongoDB for data persistence.",
+        "Developed backend APIs and database schemas, ensuring secure authentication flows and efficient data operations for web applications.",
+        "Practiced Git/Github workflows, wrote comprehensive unit tests to ensure code quality and functionality, and implemented accessible UI components following WCAG guidelines."
+      ]
+    },
+    {
+      "title": "IT Specialist",
+      "company": "Nimble Capital Limited",
+      "period": "Feb 2019 – Dec 2021",
+      "responsibilities": [
+        "Oversaw day-to-day technical operations, ensuring uptime and rapid bug resolution.",
+        "Automated customer data collation and contact workflows for efficient records management.",
+        "Executed digital marketing campaigns (email/SMS) and collected feedback for iteration."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "BSc In Animal Nutrition",
+      "institution": "Federal University of Agriculture, Abeokuta, Nigeria",
+      "period": "2013 – 2020"
+    },
+    {
+      "degree": "Diploma In Frontend Engineering",
+      "institution": "AltSchool Africa, Lagos, Nigeria",
+      "period": "2023 – 2024"
+    }
+  ],
+  "trainingAndCertification": [
+    {
+      "provider": "Udemy.com | Jonas Schmedtmann",
+      "courses": [
+        "Build Responsive Real-World Website with HTML and CSS",
+        "The Complete JavaScript Course: From Zero to Expert",
+        "The Ultimate React Course: React, Next.js, Redux & More"
+      ]
+    },
+    {
+      "provider": "Coursera.org | Deep Teaching Solutions",
+      "courses": [
+        "Learning How to Learn: Powerful mental tools to help you master tough subjects"
+      ]
+    },
+    {
+      "provider": "HNG Internship | HNG 12 (2025) program",
+      "achievement": "Finalist: Frontend Development Track"
+    }
+  ],
+  "projects": [
+    {
+      "name": "MarketGist (AI Real-Time Stock Market Dashboard)",
+      "technologies": ["Next.js", "TypeScript", "Better Auth", "Inngest"],
+      "description": [
+        "A comprehensive stock market application featuring real-time price updates, advanced search functionality, and personalized stock alerts.",
+        "Implemented interactive charts for data visualization, AI-powered market insights, and automated daily news summaries.",
+        "Architect user features including customizable watchlists and portfolio tracking."
+      ]
+    },
+    {
+      "name": "SafulPay Ecosystem (FinTech)",
+      "technologies": [
+        "FlutterFlow (Flutter)",
+        "React (TypeScript)",
+        "PHP / Go backend",
+        "MySQL",
+        "phpMyAdmin"
+      ],
+      "description": [
+        "SafulPay mobile application for agents, users and merchants to provide seamless and secure mobile money solutions; frontend - FlutterFlow (Flutter), backend v1 (PHP), v2 (Go) with MySQL database management via phpMyAdmin.",
+        "Agency monitoring web app for real time agency performance tracking and management (React TS + Laravel) with backend API development and database optimization.",
+        "Merchant web app for bulk payments and collections (Laravel), integrated REST endpoints with secure backend architecture and database operations.",
+        "Rebuilt SafulPay website in React + TypeScript, Tailwind CSS and GSAP for animation to improve overall load time/performance by ~40% and translate Figma to production UI with WCAG accessibility compliance."
+      ]
+    },
+    {
+      "name": "Resolve (Voting Web App)",
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "shadcn/ui"],
+      "description": [
+        "A Secure voting platform for individuals and organizations. Full-stack application featuring WCAG 2.1 AA compliant responsive and accessible user interface with semantic HTML, ARIA labels, and keyboard navigation. Integrated REST endpoints with backend API development, and was developed following structured PR/commits and performance best practices."
+      ]
+    },
+    {
+      "name": "Chat With Isime (Text Processing AI Bot)",
+      "technologies": ["React (TypeScript)"],
+      "description": [
+        "A text processing AI bot that leverages Chrome Origin Trials APIs (Detector, Summarization, Translation) for automatic language detection and on‑the‑fly text translations."
+      ]
+    },
+    {
+      "name": "ScissorsWeb (URL shortener and QR code generator)",
+      "technologies": ["React (TypeScript)", "GSAP", "Supabase"],
+      "description": [
+        "Implemented functionalities such as URL shortening, QR generation, analytics, Supabase authentication and storage, system light/dark theme; responsive, WCAG-compliant accessible UI with keyboard navigation and screen reader support."
+      ]
+    },
+    {
+      "name": "AfroDev Hub",
+      "technologies": ["React", "MongoDB", "Node.js"],
+      "description": [
+        "Full-stack application with MongoDB database integration, featuring user authentication, data persistence, and real-time updates. Implemented responsive, accessible UI with proper semantic HTML and ARIA standards."
+      ]
+    },
+    {
+      "name": "MarketGist",
+      "technologies": ["Next.js", "MongoDB", "TypeScript"],
+      "description": [
+        "Market analysis platform with MongoDB backend for data storage and retrieval. Built with accessibility in mind, ensuring WCAG compliance and optimal user experience across devices."
+      ]
+    },
+    {
+      "name": "WordPress E-commerce Site",
+      "technologies": ["WordPress", "WooCommerce", "PHP", "MySQL"],
+      "description": [
+        "Developed custom WordPress e-commerce solution using WooCommerce for client business needs. Customized themes and plugins, managed MySQL database, and ensured responsive, accessible design meeting client requirements and user needs."
+      ]
+    },
+    {
+      "name": "TaskPilot (Task Management App)",
+      "technologies": ["Vue (JavaScript)"],
+      "description": [
+        "A task management application built with Vue 3's composition API. It serves to demonstrates framework versatility and component-based architecture."
+      ]
+    }
+  ]
+}

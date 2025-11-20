@@ -31,7 +31,9 @@ const ResumeCard = ({
         <div className="w-full h-full">
           <img
             src={imagePath}
-            alt="resume"
+            alt={`Resume preview${companyName ? ` for ${companyName}` : ""}${
+              jobTitle ? ` -   ${jobTitle}` : ""
+            }`}
             className="w-full h-[350px] max-sm:h-[200px] object-cover object-top"
           />
         </div>

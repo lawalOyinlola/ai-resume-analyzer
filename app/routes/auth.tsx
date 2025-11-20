@@ -10,7 +10,9 @@ export const meta = () => [
 const Auth = () => {
   const { isLoading, auth } = usePuterStore();
   const location = useLocation();
-  const next = new URLSearchParams(location.search).get("next") || "/";
+  const params = new URLSearchParams(location.search);
+  const nextParam = params.get("next");
+  const next = nextParam && nextParam.startsWith("/") ? nextParam : "/";
   const navigate = useNavigate();
 
   useEffect(() => {
