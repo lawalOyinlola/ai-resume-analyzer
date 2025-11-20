@@ -38,6 +38,7 @@ const ResumeCard = ({
         setResumeUrl(objectUrl);
       } catch (error) {
         console.error("Failed to load resume preview:", error);
+        setResumeUrl("");
       }
     };
 

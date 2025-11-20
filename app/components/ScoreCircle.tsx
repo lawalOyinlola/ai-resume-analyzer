@@ -12,7 +12,7 @@ const ScoreCircle = ({ score = 75 }: { score?: number }) => {
     <div
       className="relative w-[100px] h-[100px]"
       role="img"
-      aria-label={`Score: ${score} out of 100`}
+      aria-label={`Score: ${clampedScore} out of 100`}
     >
       <svg
         height="100%"

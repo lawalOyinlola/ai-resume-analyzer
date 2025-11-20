@@ -8,26 +8,34 @@ const WipeApp = () => {
   const [files, setFiles] = useState<FSItem[]>([]);
 
   const loadFiles = async () => {
-    const files = (await fs.readDir("./")) as FSItem[];
-    setFiles(files);
+    try {
+      const files = (await fs.readDir("./")) as FSItem[];
+      setFiles(files || []);
+    } catch (error) {
+      console.error("Failed to load files:", error);
+      setFiles([]);
+    }
   };
 
   useEffect(() => {
+    if (!fs) return;
     loadFiles();
-  }, []);
+  }, [fs]);
 
   useEffect(() => {
     if (!isLoading && !auth.isAuthenticated) {
       navigate("/auth?next=/wipe");
     }
-  }, [isLoading]);
+  }, [isLoading, auth.isAuthenticated, navigate]);
 
   const handleDelete = async () => {
-    files.forEach(async (file) => {
-      await fs.delete(file.path);
-    });
-    await kv.flush();
-    loadFiles();
+    try {
+      await Promise.all(files.map((file) => fs.delete(file.path)));
+      await kv.flush();
+      await loadFiles();
+    } catch (error) {
+      console.error("Failed to delete files:", error);
+    }
   };
 
   if (isLoading) {
@@ -52,7 +60,15 @@ const WipeApp = () => {
       <div>
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer"
-          onClick={() => handleDelete()}
+          onClick={() => {
+            if (
+              window.confirm(
+                "Are you sure you want to wipe all app data? This action cannot be undone."
+              )
+            ) {
+              handleDelete();
+            }
+          }}
         >
           Wipe App Data
         </button>

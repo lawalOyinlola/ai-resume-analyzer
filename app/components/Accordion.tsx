@@ -169,6 +169,7 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({
       id={`accordion-content-${itemId}`}
       role="region"
       aria-labelledby={`accordion-header-${itemId}`}
+      aria-hidden={!isActive}
       className={`
         overflow-hidden transition-all duration-300 ease-in-out
         ${isActive ? "max-h-fit opacity-100" : "max-h-0 opacity-0"}
