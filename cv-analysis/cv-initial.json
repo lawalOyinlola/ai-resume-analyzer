@@ -4,7 +4,16 @@
   "coreSkills": {
     "languages": ["JavaScript", "TypeScript", "HTML", "CSS", "PHP"],
     "frameworksLibraries": ["React.js", "Vue.js", "Laravel", "Flutter"],
-    "tools": ["Git", "Babel", "NPM", "Yarn", "FlutterFlow", "Figma", "Supabase", "Inngest"],
+    "tools": [
+      "Git",
+      "Babel",
+      "NPM",
+      "Yarn",
+      "FlutterFlow",
+      "Figma",
+      "Supabase",
+      "Inngest"
+    ],
     "apisTesting": ["RESTful APIs", "Jest", "Cypress"],
     "other": [
       "Responsive Design",
@@ -33,7 +42,7 @@
       "company": "Tech N' Goodwill Limited",
       "period": "Aug 2023 - Feb 2024",
       "responsibilities": [
-        "Collaborate with cross-functional teams to develop and maintain web applications, including an e-commerce site using Laravel and Safulpay v1; front end in FlutterFlow backend in PHP.",
+        "Collaborate with cross-functional teams to develop and maintain web applications, including an e-commerce site using Laravel and SafulPay v1; front end in FlutterFlow backend in PHP.",
         "Demonstrated the ability to quickly master software tools for software development, writing, animation, and graphic design, creating engaging content tailored to client needs."
       ]
     },
@@ -54,7 +63,7 @@
       "period": "March 2023 - March 2024",
       "responsibilities": [
         "Intensive, education‑driven internship focused on technical, soft skills and frontend engineering fundamentals.",
-        "Built production -ready projects including \"ScissorsWeb\" (URL Shortener with analytics) and \"Task Pilot\" (task management app) consuming RESTful APIs and implementaing authentication.",
+        "Built production -ready projects including \"ScissorsWeb\" (URL Shortener with analytics) and \"Task Pilot\" (task management app) consuming RESTful APIs and implementing authentication.",
         "Practiced Git/Github workflows, wrote comprehensive unit tests to ensure code quality and functionality."
       ]
     },
@@ -103,19 +112,23 @@
   ],
   "projects": [
     {
-      "name": "Signalist (AI Real-Time Stock Market Dashboard)",
+      "name": "MarketGist (AI Real-Time Stock Market Dashboard)",
       "technologies": ["Next.js", "TypeScript", "Better Auth", "Inngest"],
       "description": [
         "A comprehensive stock market application featuring real-time price updates, advanced search functionality, and personalized stock alerts.",
-        "Implemenied interactive charts for data visualization, AI-powered market insights, and automated daily news summaries.",
+        "Implemented interactive charts for data visualization, AI-powered market insights, and automated daily news summaries.",
         "Architect user features including customizable watchlists and portfolio tracking."
       ]
     },
     {
-      "name": "Safulpay Ecosystem (FinTech)",
-      "technologies": ["FlutterFlow (Flutter)", "React (TypeScript)", "PHP / Go backend"],
+      "name": "SafulPay Ecosystem (FinTech)",
+      "technologies": [
+        "FlutterFlow (Flutter)",
+        "React (TypeScript)",
+        "PHP / Go backend"
+      ],
       "description": [
-        "SafulPay mobile application for agents, users and marchants to provide seamless and secure mobile money solutuons; frontend - FlutterFlow (Flutter), backend v1 (PHP), v2 (Go).",
+        "SafulPay mobile application for agents, users and merchants to provide seamless and secure mobile money solutions; frontend - FlutterFlow (Flutter), backend v1 (PHP), v2 (Go).",
         "Agency monitoring web app for real time agency performance tracking and management (React TS + Laravel).",
         "Merchant web app for bulk payments and collections. (Laravel), integrated REST endpoint.",
         "Rebuilt SafulPay website in React + TypeScript, Tailwind CSS and GSAP for animation to improve overall load time/performance by ~40% and translate Figma to production UI."
@@ -125,7 +138,7 @@
       "name": "Resolve (Voting Web App)",
       "technologies": ["Next.js", "TypeScript", "Tailwind", "shadcn/ui"],
       "description": [
-        "A Secure voting platform for individuals and organizations. It features a responsive and accessible user interface, integrated REST endpoints and was developed following structured PR/commits and performance best pratices"
+        "A Secure voting platform for individuals and organizations. It features a responsive and accessible user interface, integrated REST endpoints and was developed following structured PR/commits and performance best practices"
       ]
     },
     {
@@ -136,10 +149,10 @@
       ]
     },
     {
-      "name": "ScissorsWeb (URL shortener and QR code genreator)",
+      "name": "ScissorsWeb (URL shortener and QR code generator)",
       "technologies": ["React (TypeScript)", "GSAP"],
       "description": [
-        "Implemented functionalities such as URL shortening, QR generation, analytics, Supabase authenticcation and storage, system light/dark theme; responsive, accessible and animated UI."
+        "Implemented functionalities such as URL shortening, QR generation, analytics, Supabase authentication and storage, system light/dark theme; responsive, accessible and animated UI."
       ]
     },
     {
@@ -151,4 +164,3 @@
     }
   ]
 }
-

@@ -157,8 +157,8 @@ const Upload = () => {
                 />
               </div>
 
-              <button className="primary-button" type="submit">
-                Analyze Resume
+              <button className="upload-button" type="submit">
+                Save & Analyze Resume
               </button>
             </form>
           )}

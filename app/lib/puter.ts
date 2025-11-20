@@ -106,11 +106,11 @@ export const usePuterStore = create<PuterStore>((set, get) => {
   ) => ({
     user,
     isAuthenticated,
-    signIn: get().auth.signIn,
-    signOut: get().auth.signOut,
-    refreshUser: get().auth.refreshUser,
-    checkAuthStatus: get().auth.checkAuthStatus,
-    getUser: () => user,
+    signIn: () => signIn(),
+    signOut: () => signOut(),
+    refreshUser: () => refreshUser(),
+    checkAuthStatus: () => checkAuthStatus(),
+    getUser: () => get().auth.user,
   });
 
   const setError = (msg: string) => {
@@ -216,7 +216,14 @@ export const usePuterStore = create<PuterStore>((set, get) => {
 
   // Poll for Puter.js availability every 100ms for up to 10 seconds
   // This handles the case where the external script loads asynchronously
+  let pollingInterval: NodeJS.Timeout | null = null;
+  let pollingTimeout: NodeJS.Timeout | null = null;
+
   const init = (): void => {
+    // Clean up any existing timers
+    if (pollingInterval) clearInterval(pollingInterval);
+    if (pollingTimeout) clearTimeout(pollingTimeout);
+
     const puter = getPuter();
     if (puter) {
       set({ puterReady: true });
@@ -224,16 +231,19 @@ export const usePuterStore = create<PuterStore>((set, get) => {
       return;
     }
 
-    const interval = setInterval(() => {
+    pollingInterval = setInterval(() => {
       if (getPuter()) {
-        clearInterval(interval);
+        if (pollingInterval) clearInterval(pollingInterval);
+        pollingInterval = null;
         set({ puterReady: true });
         checkAuthStatus();
       }
     }, 100);
 
-    setTimeout(() => {
-      clearInterval(interval);
+    pollingTimeout = setTimeout(() => {
+      if (pollingInterval) clearInterval(pollingInterval);
+      pollingInterval = null;
+      pollingTimeout = null;
       if (!getPuter()) {
         setError("Puter.js failed to load within 10 seconds");
       }

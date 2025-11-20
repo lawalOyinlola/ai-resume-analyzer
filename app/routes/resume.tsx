@@ -25,31 +25,59 @@ const Resume = () => {
   }, [auth.isAuthenticated, isLoading, navigate]);
 
   useEffect(() => {
+    if (!id || !kv || !fs) {
+      return;
+    }
+
+    let aborted = false;
+    let resumeUrl: string | undefined;
+    let imageUrl: string | undefined;
+
     const loadResume = async () => {
-      const resume = await kv.get(`resume:${id}`);
+      try {
+        const resumeData = await kv.get(`resume:${id}`);
+        if (aborted || !resumeData) return;
 
-      if (!resume) return;
+        const data = JSON.parse(resumeData);
 
-      const data = JSON.parse(resume);
+        const resumeBlob = await fs.read(data.resumePath);
+        if (aborted || !resumeBlob) return;
 
-      const resumeBlob = await fs.read(data.resumePath);
-      if (!resumeBlob) return;
+        const imageBlob = await fs.read(data.imagePath);
+        if (aborted || !imageBlob) return;
 
-      const pdfBlob = new Blob([resumeBlob], { type: "application/pdf" });
-      const resumeUrl = URL.createObjectURL(pdfBlob);
-      setResumeUrl(resumeUrl);
+        const pdfBlob = new Blob([resumeBlob], { type: "application/pdf" });
+        resumeUrl = URL.createObjectURL(pdfBlob);
+        imageUrl = URL.createObjectURL(imageBlob);
 
-      const imageBlob = await fs.read(data.imagePath);
-      if (!imageBlob) return;
-      const imageUrl = URL.createObjectURL(imageBlob);
-      setImageUrl(imageUrl);
+        if (aborted) {
+          URL.revokeObjectURL(resumeUrl);
+          URL.revokeObjectURL(imageUrl);
+          return;
+        }
 
-      setFeedback(data.feedback);
-      console.log({ resumeUrl, imageUrl, feedback: data.feedback });
+        setFeedback(data.feedback);
+        setResumeUrl(resumeUrl);
+        setImageUrl(imageUrl);
+      } catch (error) {
+        console.error("Failed to load and process resume:", error);
+        if (resumeUrl) URL.revokeObjectURL(resumeUrl);
+        if (imageUrl) URL.revokeObjectURL(imageUrl);
+      }
     };
 
     loadResume();
-  }, [id]);
+
+    return () => {
+      aborted = true;
+      if (resumeUrl) {
+        URL.revokeObjectURL(resumeUrl);
+      }
+      if (imageUrl) {
+        URL.revokeObjectURL(imageUrl);
+      }
+    };
+  }, [id, kv, fs]);
 
   return (
     <main className="!pt-0">
@@ -62,9 +90,9 @@ const Resume = () => {
         </Link>
       </nav>
       <div className="flex flex-row w-full max-lg:flex-col-reverse">
-        <section className="feedback-section bg-[url('/images/bg-small.svg') bg-cover h-[100vh] sticky top-0 items-center justify-center">
+        <section className="feedback-section bg-[url('/images/bg-small.svg')] bg-cover h-[100vh] sticky top-0 items-center justify-center">
           {imageUrl && resumeUrl && (
-            <div className="animate-in fade-in duration-1000 gradient-border max-sm:m-0 h-[90%] max-wxl:h-fit w-fit">
+            <div className="animate-in fade-in duration-1000 gradient-border max-sm:m-0 h-[90%] max-w-xl:h-fit w-fit">
               <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
                 <img
                   src={imageUrl}

@@ -7,15 +7,20 @@ export function PuterScriptLoader() {
 
   // Dynamically load Puter script so we can surface load errors
   useEffect(() => {
+    let isMounted = true;
     const script = document.createElement("script");
     script.src = "https://js.puter.com/v2/";
     script.async = true;
     script.onload = () => {
-      setScriptError(null);
+      if (isMounted) {
+        setScriptError(null);
+      }
     };
     script.onerror = () => {
       console.error("Failed to load Puter.js");
-      setScriptError("Unable to connect to Puter. Please refresh the page.");
+      if (isMounted) {
+        setScriptError("Unable to connect to Puter. Please refresh the page.");
+      }
     };
     document.body.appendChild(script);
 
@@ -23,6 +28,7 @@ export function PuterScriptLoader() {
     init();
 
     return () => {
+      isMounted = false;
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }

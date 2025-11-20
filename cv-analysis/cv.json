@@ -61,7 +61,7 @@
       "company": "Tech N' Goodwill Limited",
       "period": "Aug 2023 - Feb 2024",
       "responsibilities": [
-        "Collaborated with cross-functional teams and stakeholders to develop and maintain web applications, including an e-commerce site using Laravel and Safulpay v1; front end in FlutterFlow backend in PHP with MySQL database management.",
+        "Collaborated with cross-functional teams and stakeholders to develop and maintain web applications, including an e-commerce site using Laravel and SafulPay v1; front end in FlutterFlow backend in PHP with MySQL database management.",
         "Developed and maintained backend APIs and database schemas, ensuring secure data handling and efficient server-side operations for production applications.",
         "Built WordPress e-commerce solutions using WooCommerce for freelance clients, customizing themes and plugins to meet specific business requirements and user needs.",
         "Demonstrated the ability to quickly master software tools for software development, writing, animation, and graphic design, creating engaging content tailored to client needs while maintaining accessibility standards."
@@ -134,16 +134,16 @@
   ],
   "projects": [
     {
-      "name": "Signalist (AI Real-Time Stock Market Dashboard)",
+      "name": "MarketGist (AI Real-Time Stock Market Dashboard)",
       "technologies": ["Next.js", "TypeScript", "Better Auth", "Inngest"],
       "description": [
         "A comprehensive stock market application featuring real-time price updates, advanced search functionality, and personalized stock alerts.",
-        "Implemenied interactive charts for data visualization, AI-powered market insights, and automated daily news summaries.",
+        "Implemented interactive charts for data visualization, AI-powered market insights, and automated daily news summaries.",
         "Architect user features including customizable watchlists and portfolio tracking."
       ]
     },
     {
-      "name": "Safulpay Ecosystem (FinTech)",
+      "name": "SafulPay Ecosystem (FinTech)",
       "technologies": [
         "FlutterFlow (Flutter)",
         "React (TypeScript)",
@@ -173,7 +173,7 @@
       ]
     },
     {
-      "name": "ScissorsWeb (URL shortener and QR code genreator)",
+      "name": "ScissorsWeb (URL shortener and QR code generator)",
       "technologies": ["React (TypeScript)", "GSAP", "Supabase"],
       "description": [
         "Implemented functionalities such as URL shortening, QR generation, analytics, Supabase authentication and storage, system light/dark theme; responsive, WCAG-compliant accessible UI with keyboard navigation and screen reader support."
